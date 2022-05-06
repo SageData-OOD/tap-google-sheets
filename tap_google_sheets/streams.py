@@ -240,7 +240,9 @@ class FileMetadata(GoogleSheets):
     replication_method = "INCREMENTAL"
     replication_keys = ["modifiedTime"]
     params = {
-        "fields": "id,name,createdTime,modifiedTime,version,teamDriveId,driveId,lastModifyingUser"
+        "fields": "id,name,createdTime,modifiedTime,version,teamDriveId,driveId,lastModifyingUser",
+        "supportsAllDrives": True,
+        "includeItemsFromAllDrives": True
     }
 
     def sync(self, catalog, state, selected_streams):
